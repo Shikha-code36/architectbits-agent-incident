@@ -1,0 +1,134 @@
+{
+  "scenario_type": "real_llm",
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": "ollama_default",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": 10,
+    "deadline_seconds": 60,
+    "detect_repeats": true
+  },
+  "started_at": "2026-10-10T21:24:34.137374+00:00",
+  "finished_at": "2026-10-10T21:25:44.114536+00:00",
+  "duration_seconds": 69.977162,
+  "step_count": 7,
+  "stop_reason": "deadline_exceeded",
+  "stop_detail": null,
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z error"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z error",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.01669999983278103
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z 404"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z 404",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.015800000255694613
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z 500"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z 500",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.02010000025620684
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z connection refused"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z connection refused",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.017499998648418114
+    },
+    {
+      "index": 5,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z database error"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z database error",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.01610000072105322
+    },
+    {
+      "index": 6,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z network error"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z network error",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.017500000467407517
+    },
+    {
+      "index": 7,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z external service down"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z external service down",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.0197000008483883
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "scenario_type": "real_llm",
+  "model": "qwen2.5:3b",
+  "settings": {
+    "temperature": "ollama_default",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2_no_human",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool. There is no human available to answer questions or run tools for you. Never ask for information; act on your own by calling tools.",
+    "max_steps": 10,
+    "deadline_seconds": 60,
+    "detect_repeats": true
+  },
+  "started_at": "2026-10-10T20:47:34.836049+00:00",
+  "finished_at": "2026-10-10T20:47:51.794419+00:00",
+  "duration_seconds": 16.95837,
+  "step_count": 4,
+  "stop_reason": "no_tool_call",
+  "stop_detail": "None of the logs contain a direct mention of the p99 latency increasing. Let's try a broader search to find any anomalies that might be related.",
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "checkout-api p99 latency rose to 4s"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "checkout-api p99 latency rose to 4s",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012200000128359534
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "checkout-api p99 latency"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "checkout-api p99 latency",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.01049999991664663
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "checkout-api p99"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "checkout-api p99",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.010800000382005237
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "checkout-api latency"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "checkout-api latency",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.011000000085914508
+    }
+  ]
+}

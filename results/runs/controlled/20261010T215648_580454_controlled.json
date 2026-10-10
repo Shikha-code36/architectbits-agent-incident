@@ -1,0 +1,107 @@
+{
+  "scenario_type": "controlled",
+  "model": "scripted",
+  "settings": {
+    "scenario": "4_deadline",
+    "note": "endless scripted loop, 0.5 s per decision, deadline 1.75 s",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": null,
+    "deadline_seconds": 1.75,
+    "detect_repeats": false
+  },
+  "started_at": "2026-10-10T21:56:48.580454+00:00",
+  "finished_at": "2026-10-10T21:56:50.582413+00:00",
+  "duration_seconds": 2.001959,
+  "step_count": 4,
+  "stop_reason": "deadline_exceeded",
+  "stop_detail": null,
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "pool"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "pool",
+        "match_count": 4,
+        "lines": [
+          "2026-03-14T14:01:03Z INFO  config diff checkout-api DB_POOL_SIZE 50 -> 5",
+          "2026-03-14T14:02:35Z WARN  db-pool in_use=5/5 waiters=12 acquire_wait_ms=1850",
+          "2026-03-14T14:03:12Z WARN  db-pool in_use=5/5 waiters=31 acquire_wait_ms=3700",
+          "2026-03-14T14:04:31Z ERROR db-pool acquire timeout waiters=47 in_use=5/5"
+        ],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.056400000175926834
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "pool"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "pool",
+        "match_count": 4,
+        "lines": [
+          "2026-03-14T14:01:03Z INFO  config diff checkout-api DB_POOL_SIZE 50 -> 5",
+          "2026-03-14T14:02:35Z WARN  db-pool in_use=5/5 waiters=12 acquire_wait_ms=1850",
+          "2026-03-14T14:03:12Z WARN  db-pool in_use=5/5 waiters=31 acquire_wait_ms=3700",
+          "2026-03-14T14:04:31Z ERROR db-pool acquire timeout waiters=47 in_use=5/5"
+        ],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.04040000021632295
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "pool"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "pool",
+        "match_count": 4,
+        "lines": [
+          "2026-03-14T14:01:03Z INFO  config diff checkout-api DB_POOL_SIZE 50 -> 5",
+          "2026-03-14T14:02:35Z WARN  db-pool in_use=5/5 waiters=12 acquire_wait_ms=1850",
+          "2026-03-14T14:03:12Z WARN  db-pool in_use=5/5 waiters=31 acquire_wait_ms=3700",
+          "2026-03-14T14:04:31Z ERROR db-pool acquire timeout waiters=47 in_use=5/5"
+        ],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.02680000034160912
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "pool"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "pool",
+        "match_count": 4,
+        "lines": [
+          "2026-03-14T14:01:03Z INFO  config diff checkout-api DB_POOL_SIZE 50 -> 5",
+          "2026-03-14T14:02:35Z WARN  db-pool in_use=5/5 waiters=12 acquire_wait_ms=1850",
+          "2026-03-14T14:03:12Z WARN  db-pool in_use=5/5 waiters=31 acquire_wait_ms=3700",
+          "2026-03-14T14:04:31Z ERROR db-pool acquire timeout waiters=47 in_use=5/5"
+        ],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.026499999876250513
+    }
+  ]
+}

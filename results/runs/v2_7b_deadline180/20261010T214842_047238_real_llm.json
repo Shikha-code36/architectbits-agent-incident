@@ -1,0 +1,186 @@
+{
+  "scenario_type": "real_llm",
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": "ollama_default",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": 10,
+    "deadline_seconds": 180.0,
+    "detect_repeats": true
+  },
+  "started_at": "2026-10-10T21:48:42.047238+00:00",
+  "finished_at": "2026-10-10T21:50:07.482851+00:00",
+  "duration_seconds": 85.435613,
+  "step_count": 10,
+  "stop_reason": "step_budget_exhausted",
+  "stop_detail": null,
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.016400001186411828
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02",
+        "match_count": 3,
+        "lines": [
+          "2026-03-14T14:02:10Z INFO  checkout-api request completed path=/checkout status=200 duration_ms=910",
+          "2026-03-14T14:02:35Z WARN  db-pool in_use=5/5 waiters=12 acquire_wait_ms=1850",
+          "2026-03-14T14:02:50Z INFO  dns resolution_latency_ms=3 host=payments.internal status=ok"
+        ],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014600000213249587
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z latency rise"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z latency rise",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.015600000551785342
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z db-pool"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z db-pool",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.01489999885961879
+    },
+    {
+      "index": 5,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z db connection"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z db connection",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.013799999578623101
+    },
+    {
+      "index": 6,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z db timeout"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z db timeout",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014100000043981709
+    },
+    {
+      "index": 7,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02 db timeout"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02 db timeout",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014500001270789653
+    },
+    {
+      "index": 8,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02 db pool"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02 db pool",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014100000043981709
+    },
+    {
+      "index": 9,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02 db in_use"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02 db in_use",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.013999999282532372
+    },
+    {
+      "index": 10,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02 db waiters"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02 db waiters",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.015100000382517464
+    }
+  ]
+}

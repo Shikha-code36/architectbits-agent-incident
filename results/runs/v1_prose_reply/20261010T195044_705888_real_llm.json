@@ -1,0 +1,34 @@
+{
+  "scenario_type": "real_llm",
+  "model": "qwen2.5:3b",
+  "settings": {
+    "temperature": "ollama_default",
+    "max_steps": 10,
+    "deadline_seconds": 60,
+    "detect_repeats": true
+  },
+  "started_at": "2026-10-10T19:50:44.705888+00:00",
+  "finished_at": "2026-10-10T19:50:50.787744+00:00",
+  "duration_seconds": 6.081856,
+  "step_count": 1,
+  "stop_reason": "final_answer",
+  "final_answer": "It seems that there are no matching logs found for the specified query. Please provide additional details or check if the log level or filters need to be adjusted.",
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "p99 latency rose to >4000ms starting around 14:02Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "p99 latency rose to >4000ms starting around 14:02Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.010400000064691994
+    }
+  ]
+}

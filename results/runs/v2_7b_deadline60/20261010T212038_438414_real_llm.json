@@ -1,0 +1,118 @@
+{
+  "scenario_type": "real_llm",
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": "ollama_default",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": 10,
+    "deadline_seconds": 60,
+    "detect_repeats": true
+  },
+  "started_at": "2026-10-10T21:20:38.438414+00:00",
+  "finished_at": "2026-10-10T21:21:46.049573+00:00",
+  "duration_seconds": 67.611159,
+  "step_count": 6,
+  "stop_reason": "deadline_exceeded",
+  "stop_detail": null,
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014799999917158857
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z -checkout-api latency -4s"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z -checkout-api latency -4s",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014400000509340316
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z -200ms +4s"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z -200ms +4s",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014999999621068127
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z -200ms +4s checkout-api"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z -200ms +4s checkout-api",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.02099999983329326
+    },
+    {
+      "index": 5,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z -200ms +4s -INFO +ERROR checkout-api"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z -200ms +4s -INFO +ERROR checkout-api",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.019799999790848233
+    },
+    {
+      "index": 6,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z -200ms +4s -INFO +ERROR -stacktrace checkout-api"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z -200ms +4s -INFO +ERROR -stacktrace checkout-api",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014400000509340316
+    }
+  ]
+}

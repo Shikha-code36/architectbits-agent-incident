@@ -1,0 +1,134 @@
+{
+  "scenario_type": "real_llm",
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": "ollama_default",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": 10,
+    "deadline_seconds": 180.0,
+    "detect_repeats": true
+  },
+  "started_at": "2026-10-10T21:38:38.868416+00:00",
+  "finished_at": "2026-10-10T21:40:28.213955+00:00",
+  "duration_seconds": 109.345539,
+  "step_count": 7,
+  "stop_reason": "repeated_action",
+  "stop_detail": null,
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z checkout-api latency"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z checkout-api latency",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012299999070819467
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15 14:02 checkout-api latency"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15 14:02 checkout-api latency",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014799999917158857
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z checkout-api.*latency.*4s"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z checkout-api.*latency.*4s",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.07660000119358301
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15 14:02 checkout-api.*latency.*4s"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15 14:02 checkout-api.*latency.*4s",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.013300001228344627
+    },
+    {
+      "index": 5,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15 14:02 -level=error checkout-api.*latency.*4s"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15 14:02 -level=error checkout-api.*latency.*4s",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012900000001536682
+    },
+    {
+      "index": 6,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z -level=error checkout-api.*latency.*4s"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z -level=error checkout-api.*latency.*4s",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.03459999970800709
+    },
+    {
+      "index": 7,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z resource.*error|warn|critical"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z resource.*error|warn|critical",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.015999999959603883
+    }
+  ]
+}

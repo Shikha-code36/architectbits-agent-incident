@@ -1,0 +1,183 @@
+{
+  "scenario_type": "controlled",
+  "model": "scripted",
+  "settings": {
+    "scenario": "1_no_guards",
+    "note": "replay of the first 10 queries of real run 20261010T213635_265839; all guards OFF, only the end of the script stops it",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": null,
+    "deadline_seconds": null,
+    "detect_repeats": false
+  },
+  "started_at": "2026-10-10T21:56:48.570853+00:00",
+  "finished_at": "2026-10-10T21:56:48.570853+00:00",
+  "duration_seconds": 0.0,
+  "step_count": 10,
+  "stop_reason": "model_error",
+  "stop_detail": "Scripted model has no more decisions.",
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.021800000467919745
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "error 2023-04-15T14:02Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "error 2023-04-15T14:02Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.01179999890155159
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z database"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z database",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.00960000033956021
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z timeout"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z timeout",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.007099999493220821
+    },
+    {
+      "index": 5,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z connection refused"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z connection refused",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.007099999493220821
+    },
+    {
+      "index": 6,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z database connection refused"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z database connection refused",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.0075000007200287655
+    },
+    {
+      "index": 7,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z database timeout"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z database timeout",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012299999070819467
+    },
+    {
+      "index": 8,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z database error"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z database error",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.006599999323952943
+    },
+    {
+      "index": 9,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z external service error"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z external service error",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.008500001058564521
+    },
+    {
+      "index": 10,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z external service timeout"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z external service timeout",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.006100000973674469
+    }
+  ]
+}

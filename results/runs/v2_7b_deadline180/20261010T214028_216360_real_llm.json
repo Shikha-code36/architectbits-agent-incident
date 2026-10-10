@@ -1,0 +1,182 @@
+{
+  "scenario_type": "real_llm",
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": "ollama_default",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": 10,
+    "deadline_seconds": 180.0,
+    "detect_repeats": true
+  },
+  "started_at": "2026-10-10T21:40:28.216360+00:00",
+  "finished_at": "2026-10-10T21:42:08.726744+00:00",
+  "duration_seconds": 100.510384,
+  "step_count": 10,
+  "stop_reason": "step_budget_exhausted",
+  "stop_detail": null,
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z ERROR"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z ERROR",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014999999621068127
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z WARN"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z WARN",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.0182999992830446
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.016899999536690302
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z OR 2023-04-15T14:02:00Z-1m"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z OR 2023-04-15T14:02:00Z-1m",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.01449999945180025
+    },
+    {
+      "index": 5,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02:00Z OR 14:02:00Z-1m"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02:00Z OR 14:02:00Z-1m",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012200000128359534
+    },
+    {
+      "index": 6,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02:00Z OR 2023-04-15 14:02:00"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02:00Z OR 2023-04-15 14:02:00",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.011599999197642319
+    },
+    {
+      "index": 7,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02:00Z OR 2023-04-15T14:02:00Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02:00Z OR 2023-04-15T14:02:00Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012099999366910197
+    },
+    {
+      "index": 8,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02:00Z ERROR"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02:00Z ERROR",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.013299999409355223
+    },
+    {
+      "index": 9,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02:00Z WARN"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02:00Z WARN",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.024900000425986946
+    },
+    {
+      "index": 10,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02:00Z INFO"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02:00Z INFO",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012699998478638008
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "scenario_type": "real_llm",
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": "ollama_default",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": 10,
+    "deadline_seconds": 180.0,
+    "detect_repeats": true
+  },
+  "started_at": "2026-10-10T21:43:29.198265+00:00",
+  "finished_at": "2026-10-10T21:44:42.871188+00:00",
+  "duration_seconds": 73.672923,
+  "step_count": 10,
+  "stop_reason": "step_budget_exhausted",
+  "stop_detail": null,
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.015499999790336005
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "error 14:02"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "error 14:02",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014999999621068127
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "latency 14:02"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "latency 14:02",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014200000805431046
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z p99"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z p99",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.015400000847876072
+    },
+    {
+      "index": 5,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z database"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z database",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012999998943996616
+    },
+    {
+      "index": 6,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z connection"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z connection",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014100000043981709
+    },
+    {
+      "index": 7,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z timeout"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z timeout",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014999999621068127
+    },
+    {
+      "index": 8,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z query"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z query",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014900000678608194
+    },
+    {
+      "index": 9,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z slow"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z slow",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.0197000008483883
+    },
+    {
+      "index": 10,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z database slow"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z database slow",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.013499999113264494
+    }
+  ]
+}

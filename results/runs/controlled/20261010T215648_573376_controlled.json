@@ -1,0 +1,87 @@
+{
+  "scenario_type": "controlled",
+  "model": "scripted",
+  "settings": {
+    "scenario": "2_step_budget",
+    "note": "replay of the first 10 queries of real run 20261010T213635_265839; step budget of 4",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": 4,
+    "deadline_seconds": null,
+    "detect_repeats": false
+  },
+  "started_at": "2026-10-10T21:56:48.573376+00:00",
+  "finished_at": "2026-10-10T21:56:48.573376+00:00",
+  "duration_seconds": 0.0,
+  "step_count": 4,
+  "stop_reason": "step_budget_exhausted",
+  "stop_detail": null,
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.02409999979136046
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "error 2023-04-15T14:02Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "error 2023-04-15T14:02Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012299999070819467
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z database"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z database",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.009500001397100277
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02Z timeout"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02Z timeout",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.00819999877421651
+    }
+  ]
+}

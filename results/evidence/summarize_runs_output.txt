@@ -1,0 +1,126 @@
+﻿traces found: 56
+
+== controlled | model: scripted | submit_tool_v2 | prompt: v2 | max_steps: 4 | deadline: none | repeat_guard: False  (1 runs) ==
+stop reasons:    {'step_budget_exhausted': 1}
+steps per run:   {4: 1}
+first queries:
+  1 x '2023-04-15T14:02Z'
+runs with a query containing the word 'pool':  0 of 1
+runs that saw at least one matching log line:  0 of 1
+runs with stop_reason 'final_answer':          0 of 1
+final answers with NO matching evidence seen:  0 of 0
+final answers containing the word 'pool':      0 of 1
+mean run duration: 0.0 s
+
+== controlled | model: scripted | submit_tool_v2 | prompt: v2 | max_steps: none | deadline: 1.75s | repeat_guard: False  (1 runs) ==
+stop reasons:    {'deadline_exceeded': 1}
+steps per run:   {4: 1}
+first queries:
+  1 x 'pool'
+runs with a query containing the word 'pool':  1 of 1
+runs that saw at least one matching log line:  1 of 1
+runs with stop_reason 'final_answer':          0 of 1
+final answers with NO matching evidence seen:  0 of 0
+final answers containing the word 'pool':      0 of 1
+mean run duration: 2.0 s
+
+== controlled | model: scripted | submit_tool_v2 | prompt: v2 | max_steps: none | deadline: none | repeat_guard: False  (1 runs) ==
+stop reasons:    {'model_error': 1}
+steps per run:   {10: 1}
+first queries:
+  1 x '2023-04-15T14:02Z'
+runs with a query containing the word 'pool':  0 of 1
+runs that saw at least one matching log line:  0 of 1
+runs with stop_reason 'final_answer':          0 of 1
+final answers with NO matching evidence seen:  0 of 0
+final answers containing the word 'pool':      0 of 1
+mean run duration: 0.0 s
+
+== controlled | model: scripted | submit_tool_v2 | prompt: v2 | max_steps: none | deadline: none | repeat_guard: True  (1 runs) ==
+stop reasons:    {'repeated_action': 1}
+steps per run:   {1: 1}
+first queries:
+  1 x '2023-04-15T14:02Z'
+runs with a query containing the word 'pool':  0 of 1
+runs that saw at least one matching log line:  0 of 1
+runs with stop_reason 'final_answer':          0 of 1
+final answers with NO matching evidence seen:  0 of 0
+final answers containing the word 'pool':      0 of 1
+mean run duration: 0.0 s
+
+== real_llm | model: qwen2.5:3b | submit_tool_v2 | prompt: v2 | max_steps: 10 | deadline: 60s | repeat_guard: True  (10 runs) ==
+stop reasons:    {'no_tool_call': 10}
+steps per run:   {1: 9, 2: 1}
+first queries:
+  4 x 'p99 latency rose from ~200ms to ~4s starting around 14:02Z'
+  3 x 'checkout-api p99 latency'
+  1 x 'checkout-api p99 latency rose'
+  1 x 'checkout-api p99 latency rose to 4000ms'
+  1 x 'checkout-api p99 latency rose to >1s'
+runs with a query containing the word 'pool':  0 of 10
+runs that saw at least one matching log line:  0 of 10
+runs with stop_reason 'final_answer':          0 of 10
+final answers with NO matching evidence seen:  0 of 0
+final answers containing the word 'pool':      0 of 10
+mean run duration: 7.2 s
+
+== real_llm | model: qwen2.5:3b | submit_tool_v2 | prompt: v2_no_human | max_steps: 10 | deadline: 60s | repeat_guard: True  (11 runs) ==
+stop reasons:    {'no_tool_call': 10, 'repeated_action': 1}
+steps per run:   {1: 9, 4: 1, 9: 1}
+first queries:
+  6 x 'p99 latency rose from ~200ms to ~4s starting around 14:02Z'
+  2 x 'checkout-api p99 latency rose to 4s'
+  1 x 'checkout-api p99 latency rose'
+  1 x 'p99 latency rose from ~200ms to ~4s'
+  1 x 'checkout-api p99 latency rose to 4000ms'
+runs with a query containing the word 'pool':  0 of 11
+runs that saw at least one matching log line:  0 of 11
+runs with stop_reason 'final_answer':          0 of 11
+final answers with NO matching evidence seen:  0 of 0
+final answers containing the word 'pool':      0 of 11
+mean run duration: 10.1 s
+
+== real_llm | model: qwen2.5:3b | v1_prose_reply (no protocol field) | prompt: v1 | max_steps: 10 | deadline: 60s | repeat_guard: True  (11 runs) ==
+stop reasons:    {'final_answer': 11}
+steps per run:   {1: 10, 2: 1}
+first queries:
+  7 x 'checkout-api p99 latency'
+  3 x 'p99 latency rose from ~200ms to ~4s'
+  1 x 'p99 latency rose to >4000ms starting around 14:02Z'
+runs with a query containing the word 'pool':  0 of 11
+runs that saw at least one matching log line:  0 of 11
+runs with stop_reason 'final_answer':          11 of 11
+final answers with NO matching evidence seen:  11 of 11
+final answers containing the word 'pool':      0 of 11
+mean run duration: 6.9 s
+
+== real_llm | model: qwen2.5:7b | submit_tool_v2 | prompt: v2 | max_steps: 10 | deadline: 180.0s | repeat_guard: True  (10 runs) ==
+stop reasons:    {'step_budget_exhausted': 5, 'repeated_action': 3, 'final_answer': 2}
+steps per run:   {2: 2, 7: 1, 8: 1, 9: 1, 10: 5}
+first queries:
+  7 x '2023-04-15T14:02:00Z'
+  1 x '2023-04-15T14:02Z'
+  1 x '2023-04-15T14:02:00Z checkout-api latency'
+  1 x '2023-04-15T14:02:00Z ERROR'
+runs with a query containing the word 'pool':  3 of 10
+runs that saw at least one matching log line:  4 of 10
+runs with stop_reason 'final_answer':          2 of 10
+final answers with NO matching evidence seen:  1 of 2
+final answers containing the word 'pool':      1 of 10
+mean run duration: 81.2 s
+
+== real_llm | model: qwen2.5:7b | submit_tool_v2 | prompt: v2 | max_steps: 10 | deadline: 60s | repeat_guard: True  (10 runs) ==
+stop reasons:    {'deadline_exceeded': 8, 'final_answer': 2}
+steps per run:   {2: 2, 5: 1, 6: 2, 7: 3, 9: 2}
+first queries:
+  6 x '2023-04-15T14:02:00Z'
+  1 x '2023-04-15T14:02:00Z ERROR'
+  1 x '2023-04-15T14:02:00Z checkout-api latency increase'
+  1 x '2023-04-15T14:02* checkout-api latency'
+  1 x '2023-04-15T14:02:00Z error'
+runs with a query containing the word 'pool':  1 of 10
+runs that saw at least one matching log line:  2 of 10
+runs with stop_reason 'final_answer':          2 of 10
+final answers with NO matching evidence seen:  0 of 2
+final answers containing the word 'pool':      1 of 10
+mean run duration: 61.1 s

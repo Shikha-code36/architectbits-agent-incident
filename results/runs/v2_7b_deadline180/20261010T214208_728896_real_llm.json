@@ -1,0 +1,182 @@
+{
+  "scenario_type": "real_llm",
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": "ollama_default",
+    "protocol": "submit_tool_v2",
+    "prompt": "v2",
+    "system_prompt": "You are an on-call engineer investigating a production incident. Use the search_logs tool to gather evidence. When you have found evidence for the root cause, call the submit_root_cause tool with a short summary. Do not answer in plain text: always respond by calling a tool.",
+    "max_steps": 10,
+    "deadline_seconds": 180.0,
+    "detect_repeats": true
+  },
+  "started_at": "2026-10-10T21:42:08.728896+00:00",
+  "finished_at": "2026-10-10T21:43:29.195047+00:00",
+  "duration_seconds": 80.466151,
+  "step_count": 10,
+  "stop_reason": "step_budget_exhausted",
+  "stop_detail": null,
+  "final_answer": null,
+  "steps": [
+    {
+      "index": 1,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.01449999945180025
+    },
+    {
+      "index": 2,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z latency increase"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z latency increase",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.012699998478638008
+    },
+    {
+      "index": 3,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z database connection pool exhausted"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z database connection pool exhausted",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014200000805431046
+    },
+    {
+      "index": 4,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z error database timeout"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z error database timeout",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.016400001186411828
+    },
+    {
+      "index": 5,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z database connection pool full"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z database connection pool full",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.018799999452312477
+    },
+    {
+      "index": 6,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z database connection error"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z database connection error",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014299999747890979
+    },
+    {
+      "index": 7,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z database connection refused"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z database connection refused",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.014799999917158857
+    },
+    {
+      "index": 8,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z database connectivity issue"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z database connectivity issue",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.017100001059588976
+    },
+    {
+      "index": 9,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "14:02Z database connection pool reached max size"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "14:02Z database connection pool reached max size",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.013900000340072438
+    },
+    {
+      "index": 10,
+      "tool": "search_logs",
+      "arguments": {
+        "query": "2023-04-15T14:02:00Z database connection pool full"
+      },
+      "outcome": "ok",
+      "observation": {
+        "query": "2023-04-15T14:02:00Z database connection pool full",
+        "match_count": 0,
+        "lines": [],
+        "truncated": false
+      },
+      "error": null,
+      "duration_ms": 0.01359999987471383
+    }
+  ]
+}
