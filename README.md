@@ -31,8 +31,9 @@ See [results/SUMMARY.md](results/SUMMARY.md) for the full table and caveats.
   of the 3B model. It searched, got nothing, and stopped, or replied in prose.
 - Under the original protocol, 11 of 11 prose replies were recorded as
   `final_answer` with no evidence behind them. The label was wrong, not the model.
-- A 7B model persisted, wasted its budget on zero-match searches, and in 2 of 10
-  runs submitted a root cause (one without any evidence).
+- A 7B model persisted, wasted its budget on zero-match searches, and in 4 of
+  its 20 runs submitted a root cause; 3 of those had retrieved matching log
+  lines and 1 had not.
 - Each safeguard (step budget, deadline, repeat detection) stops a loop in a
   controlled, scripted scenario. Guards limit waste; they do not make answers correct.
 

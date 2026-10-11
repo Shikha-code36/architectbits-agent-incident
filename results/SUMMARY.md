@@ -32,17 +32,22 @@ All runs are raw traces in `results/runs/`. Counts below are produced by
    dominant behavior of the 3B model. In all 32 3B runs it made between 1 and
    9 searches, got zero matches every time, and stopped, or (v1) wrote prose.
 2. Under v1, 11 of 11 runs ended as `final_answer` with no matching evidence
-   seen. The label said "answered"; nothing had been answered. Making the
-   finish explicit (v2) turned these into `no_tool_call`.
+   seen. The label said "answered"; nothing had been answered. Under v2 (an
+   explicit submit tool and a different prompt) the same model ended in prose,
+   recorded as `no_tool_call`, 10 of 10. The protocol and prompt changed
+   together, so the label fix alone is not isolated.
 3. An explicit "no human is available" instruction did not remove the
-   behavior (by reading the stop text, 8 of 11 still addressed a human).
+   behavior: of the 10 runs that ended in prose, 8 addressed a person
+   (human-judged from the stop text). One run ended in `repeated_action`
+   with no text.
 4. The 7B model persisted: 16 of 20 runs made 5 to 10 searches. In 8 of 10
    runs at 60 s it was stopped by the clock; with 180 s it was stopped by the
    step budget (5), the repeat guard (3) or it submitted (2). More time did not
    increase the number of runs that submitted (2 of 10 in both batches).
-5. Of the 7B 180 s runs, 4 saw the key log lines. One submitted a grounded
-   answer. One submitted an answer with no matching evidence ("database
-   timeout", all 8 searches returned zero).
+5. Of the 7B 180 s runs, 4 retrieved the three `14:02` lines, including the
+   db-pool warning; none retrieved the config-change line. One submitted a
+   grounded answer. One submitted an answer with no matching evidence
+   ("database timeout", all 8 searches returned zero).
 6. Every 7B run (20 of 20) began with an invented date (`2023-04-15...`) that
    appears nowhere in the alert or logs, and several used regex or boolean
    syntax the tool does not support.
@@ -69,8 +74,8 @@ Unit tests: 57 passed (`results/evidence/pytest_output.txt`).
   grounded answer in 3 of 20 runs total.
 - Guards stop waste; they do not make answers correct. Repeat detection is
   exact-match, so reworded queries pass; guards can also stop a promising run
-  (a 7B run found the key lines at step 2, then `repeated_action` stopped it
-  after 2 searches).
+  (a 7B run retrieved the three `14:02` lines at step 2, then
+  `repeated_action` stopped it after 2 searches).
 - "Saw evidence" and the word-match for `pool` are crude checks; answers were
   read by hand.
 - The alert says `14:02Z` but log lines carry seconds (`14:02:10Z`), so the
